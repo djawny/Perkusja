@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:topLeftRadius="@dimen/corner_radius"
+        android:topRightRadius="@dimen/corner_radius"/>
+    <size
+        android:width="@dimen/elipse_size"
+        android:height="@dimen/elipse_size" />
+    <stroke
+        android:width="5dp"
+        android:color="@color/colorPrimary"
+        android:dashGap="5dp"
+        android:dashWidth="2dp" />
+    <gradient
+        android:angle="90"
+        android:centerColor="@color/colorPrimaryDark"
+        android:endColor="@color/colorAccent"
+        android:gradientRadius="32dp"
+        android:startColor="@color/colorAccent"
+        android:type="sweep" />
+</shape>
