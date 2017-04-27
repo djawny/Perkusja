@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
     private MediaPlayer bassSample;
     private MediaPlayer drumSample;
     private MediaPlayer gongSample;
-    private MediaPlayer paleczkiSample;
+    private MediaPlayer drumSticksSample;
     private MediaPlayer cymbalSample;
 
     @Override
@@ -21,13 +23,14 @@ public class MainActivity extends AppCompatActivity {
         bassSample = MediaPlayer.create(this, R.raw.bass);
         drumSample = MediaPlayer.create(this, R.raw.drum1);
         gongSample = MediaPlayer.create(this, R.raw.gong);
-        paleczkiSample = MediaPlayer.create(this, R.raw.paleczki);
+        drumSticksSample = MediaPlayer.create(this, R.raw.drumsticks);
         cymbalSample = MediaPlayer.create(this, R.raw.cymbal);
     }
 
+    @OnClick({R.id.imageView1, R.id.imageView2, R.id.imageView3, R.id.imageView4, R.id.imageView5})
     public void hitDrum(View view) {
         switch (view.getId()) {
-            case R.id.imageView:
+            case R.id.imageView1:
                 playSample(bassSample);
                 break;
             case R.id.imageView2:
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 playSample(gongSample);
                 break;
             case R.id.imageView4:
-                playSample(paleczkiSample);
+                playSample(drumSticksSample);
                 break;
             case R.id.imageView5:
                 playSample(cymbalSample);
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         bassSample.release();
         drumSample.release();
         gongSample.release();
-        paleczkiSample.release();
+        drumSticksSample.release();
         cymbalSample.release();
     }
 }
